@@ -1,0 +1,14 @@
+These were the answers we were able to get for the first two smaller TODOS. 
+
+#TODO implement unitary_control() using Classiq's built in control()
+@qfunc
+def unitary_control(qubit: QArray[QBit], contrl: QArray[QBit], target: QParam[int]):
+      # works by indexing to the target qbit in the abit array calling X on this qbit
+      # and also passing the contrl qbit array as a parameter for the control call
+      control(lambda: X(qubit[target]), contrl)
+
+#TODO implement y_rotation using the RY() gate
+@qfunc
+def y_rotation(theta: QParam[float], reg: QArray[QBit], target: QParam[int]):
+      # literally calling the RY function with theat as the angle and indexing to the target qbit in the reg qbit array
+      RY(theta, reg[target])
